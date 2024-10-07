@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="description" content="Typst syntax highlighting with Prism">
+    <meta name="author" content="Mc-Zen">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <title>Typst/Prism</title>
+
+    <link href="../src/typst-theme.css" rel="stylesheet" />
+    <link href="main.css" rel="stylesheet" />
+</head>
+
+<body>
+    
+	<script src="../tests/prism.js"></script>
+	<script src="../src/prism-typst.js"></script>
+
+    <main>
+<pre><code class="language-typ">= Typst Prism
+
+- Repository: https://github.com/Mc-Zen/prism-typst
+- Prism: https://prismjs.com/
+
+
+== Distinguishing markup and code mode <section1>
+
+Distinguishing between *markup* and *code* mode (not 
+to forget _math_) is not as easy as one would think. 
+#[
+  Especially since they can be
+  #{
+    "nested"
+    [
+      _and nested_
+      #{
+        "and even more"
+        [
+          *nested*. 
+        ]
+      }
+    ]
+  }
+]
+Basically, Typst code consists of three languages. And 
+you can go from each language to each other language 
+by using all kinds of
+#let parentheses = ("()", "[]", "{}")
+In order to parse the code properly, we need to do 
+_balanced matching_ for these #parentheses. The problem
+is that #regex() is not good at doing recursive things. 
+
+This is why the recursion depth is _*limited*_. 
+
+
+== Code mode
+
+After we enter code mode, which is quite tricky as we
+saw in section @section1, syntax highlighting looks 
+quite different. 
+
+There are
+#{
+  let lengths = (1pt, 1fr, -2, 1em, 3deg, 0in, 9cm, 0rad, 100%, 1mm)
+  [and]
+  let numbers = (1.2, 2e9, -3.0003e99, 0xFF, 0b100201, 0o337, )
+}
+
+
+When in markup mode, certain keywords change the 
+context to code mode for the entire line
+
+#import "@preview/conchord:0.2.0" as con
+#import emoji: face
+
+#let x = range(0, 10)
+
+Test some important cases
+
+We have #emoji.wave and #data.rev()
+#if true [
+  *yes*
+] else [ // this is a bug but it's tough to fix
+  noe
+]
+
+#let my-func(a: 1pt, b, c) = {
+  if true {
+    return false
+  }
+  
+  return $ a + b $
+}
+
+#show heading: it => {
+  it * 2
+}
+#show math.equation.where(block: true): it => {}
+#show math.equation: it => {}
+#show: template
+#show  : template
+#set text(..) if a == b
+
+if k==l // obviously no code
+== Markup mode
+
+All escaped symbols, like \@, \{, \} etc. are noticed! 
+The same holds for line/equation breaks \
+
+#set text(2em, red)
+#show math.equation(numbering: "(1)")
+
+#hide[_hidden_]
+
+#table(
+  columns: (auto, auto, 1fr),
+  $A$, $B$, $C$,
+  // note: here lurks a recursion limit for () pairs
+  ..range(20).map(i => str(2*(i+1))) 
+)
+
+An example from the Typst documentation
+$ A = pi r^2 $
+$ "area" = pi dot "radius"^2 $
+$ cal(A) :=
+    { x in RR | x "is natural" } $
+#let x = 5
+$ #x < 17 qt.eq gt.e $ // single-character symbols are not recognized
+
+- a
+- b ~ a --- as \u{1f600} \$1.50! \u{1f600}
+
+`asd`
+
+```typ
+raw text // asd ) #{asd + 3}
+```
+// hard to detect then end of a context expression with regex:
+#context locate(<back>).position() 
+#dictionary(sys).at("version")
+
+$
+  [| |] || := ::= ... =: != >> >= >>> << <= <<<
+  -> |-> => |=> ==> --> ~~> ~> >-> ->> <- <== 
+  <-- <~~ <~ <-< <<- <-> <=> <==> <-->/
+$
+#"text"
+
+#while n < 10 {
+  n = (n * 2) - 1
+  (n,)
+}
+#{
+  #k[]
+}
+#let func() ={
+  v(2cm)
+  pad(x: 8%)[
+    #abstract
+  ]
+  pagebreak[2pt]
+}
+  
+
+
+#(23+
+23)
+#let p = ("a", "k")
+#(21)
+#let p = ("a", "k")
+21
+#let pd = "a"
+12
+
+== Equations <equations>
+
+$ 
+  c^2 &= a^2 + b^2 \ 
+    c &= plus.minus sqrt(a^2 + b^2) 
+$
+
+#[
+  $ a + x + b $
+  $ a + #place([]) x + #b $
+]
+
+
+Switching to content mode within equations is currently
+not supported: $#box[*2*]$
+
+
+== Modes and comments
+
+Due to matching rules, it is tricky to get comments and 
+switched language modes to work. Let's check some cases
+#{
+  // We have entered code mode
+  let verification = "Is this parsed as code?"
+  table(
+    columns: 2, // we're still in code mode, the "2" is an int
+  )
+  let /*really bad practice*/ x = 2pt
+  [
+    // Back in markup mode
+    #hide()
+    let // <- not a keyword
+  ]
+  [/**/ #hide[]]
+}
+#table(
+  columns: 2, // we're now in code mode, the "2" is an int
+)
+
+#let url = "https://another.edge/case" // sometimes "tricky"
+
+
+This is not simplified
+\#show heading: 
+
+#asd()</code></pre>
+    </main>
+</body>
+
+</html>

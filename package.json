@@ -1,0 +1,27 @@
+{
+  "name": "prism-typst",
+  "version": "0.1.0",
+  "description": "Typst source code highlighting with Prism",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mc-Zen/prism-typst"
+  },
+  "keywords": [
+    "prism",
+    "typst",
+    "syntax",
+    "highlighter"
+  ],
+  "type": "module",
+  "author": "Mc-Zen",
+  "license": "MIT",
+  "dependencies": {
+    "jest": "^29.7.0",
+    "jest-cli": "^29.7.0"
+  }
+}
