@@ -2,6 +2,8 @@
 
 _Syntax-highlighting Typst code with [Prism](https://prismjs.com/)_
 
+A demo, which also explains some things, can be found [here](https://mc-zen.github.io/prism-typst/). 
+
 ## Contents
 The `src/` directory contains a Prism language definition for typst which you can import after importing Prism, e.g., 
 ```html
