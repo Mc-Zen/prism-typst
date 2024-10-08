@@ -22,7 +22,7 @@ const raw = [
 ];
 
 const label = {
-  pattern: /<[\w\-.]*>/, // starting with ([^\\]) not necessary anymore when matching "escaped" before
+  pattern: /<[\w\-.:]*>/, // starting with ([^\\]) not necessary anymore when matching "escaped" before
 };
 
 const general_escapes = [
@@ -90,6 +90,8 @@ Prism.languages["typst-code"] = {
     /[\d]+\.?[\d]*(e\d+)?(?:in|mm|cm|pt|em|deg|rad|fr|%)?/,
   ],
   symbol: /#[\w\-.]+\./,
+  operator: /==|=|\+|\-|\*|\/|\+=|\-=|\*=|\/=|=>|<=|\.\.|<|>/,
+  punctuation: /[\{\}\(\):\,\;\.]/
 };
 
 
@@ -156,7 +158,7 @@ Prism.languages.typst = {
   escaped: general_escapes.concat([/~|---|--|-\?|\.\.\.|-/]),
   label: label,
   reference: {
-    pattern: /@[\w\-.]*/,
+    pattern: /@[\w\-.:]*/,
     lookbehind: true,
   },
   boltalic: [

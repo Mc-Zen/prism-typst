@@ -1,0 +1,14 @@
+= Heading
+== Subheading
+*bold* _italic_ *_boltalic_*
+\@\u{1234}
+----------
+[
+    ["heading","= Heading"],
+    ["heading","== Subheading"],
+    ["bold","*bold*"],
+    ["italic","_italic_"],
+    ["boltalic","*_boltalic_*"],
+    ["escaped","\\@"],
+    ["escaped","\\u{1234}"]
+]

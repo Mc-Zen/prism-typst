@@ -98,7 +98,7 @@ pre[class*="language-"] {
 .token.label,
 .token.reference,
 .token.escaped,
-.token.operator {
+.token.math .token.operator {
 	color: #1d6c76;
 }
 

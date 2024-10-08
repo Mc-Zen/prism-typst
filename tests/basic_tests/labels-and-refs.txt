@@ -1,0 +1,12 @@
+<asd>
+@asd
+\<mmnd>
+@jkjj_:asdse
+----------
+[
+    ["label", "<asd>"],
+    ["reference", "@asd"],
+    ["escaped", "\\<"],
+    "mmnd>",
+    ["reference", "@jkjj_:asdse"]
+]
