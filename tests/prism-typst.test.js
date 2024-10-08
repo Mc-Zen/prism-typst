@@ -100,16 +100,12 @@ function run_test_suite(name) {
   var files = fs.readdirSync(directory);
 
   for (const file of files) {
-    run_test(directory + file)
+    test('Running ' + name, () => {
+      run_test(directory + file)
+    });
   }
 }
 
 describe('prism-typst.js', () => {
-  
-  test('Running basic tests', () => {
-    run_test_suite("basic_tests")
-    // console.log(Prism.tokenize("= hello\n\\@I'm here\n#{}", Prism.languages.typst))
-    // console.log(highlight("= hello\n\\@I'm here\n#{let u = 2}", Prism.languages.typst))
-    
-  });
+  run_test_suite("basic_tests")
 });
