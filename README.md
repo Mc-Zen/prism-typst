@@ -2,6 +2,9 @@
 
 _Syntax-highlighting Typst code with [Prism](https://prismjs.com/)_
 
+[![Node.js CI](https://github.com/Mc-Zen/prism-typst/actions/workflows/node.js.yml/badge.svg)](https://github.com/Mc-Zen/prism-typst/actions/workflows/node.js.yml)
+
+
 A demo, which also explains some things, can be found [here](https://mc-zen.github.io/prism-typst/). 
 
 ## Contents
