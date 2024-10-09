@@ -1,0 +1,26 @@
+#let f(a, b: auto, len: 2pt) = {
+
+}
+----------
+[
+    [
+        "code-mode", [
+            ["keyword", "#let"],
+            ["function", "f"],
+            ["punctuation", "("],
+            "a",
+            ["punctuation", ","],
+            "b",
+            ["punctuation", ":"],
+            ["keyword", "auto"],
+            ["punctuation", ","],
+            "len",
+            ["punctuation", ":"],
+            ["number", "2pt"],
+            ["punctuation", ")"],
+            ["operator", "="],
+            ["punctuation", "{"],
+            ["punctuation", "}"]
+        ]
+    ]
+]

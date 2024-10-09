@@ -1,0 +1,23 @@
+#{
+    let u = []
+}
+----------
+[
+    [
+        "code-mode", 
+        [
+            "#",
+            ["punctuation", "{"],
+            ["keyword", "let"],
+            "u",
+            ["operator", "="],
+            [
+                "typst", 
+                [
+                    "[]"
+                ]
+            ],
+            ["punctuation", "}"]
+        ]
+    ]
+]

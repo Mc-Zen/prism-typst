@@ -1,0 +1,30 @@
+= Heading
+  == Subheading
+*bold* _italic_ *_boltalic_*
+\@\u{1234}
+https://link.org.
+#emoji.face `raw`
+```rust
+this is not rust code
+```
+#"string//not comment" // comment "notstring"
+/*comment*/
+----------
+[
+    ["heading","= Heading"],
+    ["heading","== Subheading"],
+    ["bold","*bold*"],
+    ["italic","_italic_"],
+    ["boltalic","*_boltalic_*"],
+    ["escaped","\\@"],
+    ["escaped","\\u{1234}"],
+    ["url","https://link.org"],
+    ".",
+    ["symbol", "#emoji.face"],
+    ["raw", "`raw`"],
+    ["raw", "```rust\r\nthis is not rust code\r\n```"],
+    ["string", "#\"string//not comment\""],
+    ["comment", "// comment \"notstring\""],
+    ["comment", "/*comment*/"]
+
+]

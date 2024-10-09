@@ -1,0 +1,32 @@
+#{
+    let u = [#table()]
+}
+----------
+[
+    [
+        "code-mode", 
+        [
+            "#",
+            ["punctuation", "{"],
+            ["keyword", "let"],
+            "u",
+            ["operator", "="],
+            [
+                "typst", 
+                [
+                    "[",
+                    [
+                        "code-mode",
+                        [
+                            ["function", "#table"],
+                            ["punctuation", "("],
+                            ["punctuation", ")"]
+                        ]
+                    ],
+                    "]"
+                ]
+            ],
+            ["punctuation", "}"]
+        ]
+    ]
+]

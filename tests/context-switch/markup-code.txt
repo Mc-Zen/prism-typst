@@ -1,0 +1,16 @@
+#{
+    let u
+}
+----------
+[
+    [
+        "code-mode", 
+        [
+            "#",
+            ["punctuation", "{"],
+            ["keyword", "let"],
+            "u",
+            ["punctuation", "}"]
+        ]
+    ]
+]

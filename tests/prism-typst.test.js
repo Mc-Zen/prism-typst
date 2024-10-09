@@ -107,5 +107,8 @@ function run_test_suite(name) {
 }
 
 describe('prism-typst.js', () => {
-  run_test_suite("basic_tests")
+  run_test_suite("markup");
+  run_test_suite("code-mode");
+  run_test_suite("context-switch");
+  run_test_suite("functions");
 });

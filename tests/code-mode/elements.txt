@@ -1,0 +1,36 @@
+#{
+    2pt + 5em
+    <label>
+    "string//notcomment"
+    let auto context true
+    3 == 4; // comment "notstring"
+    table()
+}
+----------
+[
+    [
+        "code-mode", 
+        [
+            "#",
+            ["punctuation", "{"],
+            ["number", "2pt"],
+            ["operator", "+"],
+            ["number", "5em"],
+            ["label", "<label>"],
+            ["string", "\"string//notcomment\""],
+            ["keyword", "let"],
+            ["keyword", "auto"],
+            ["keyword", "context"],
+            ["boolean", "true"],
+            ["number", "3"],
+            ["operator", "=="],
+            ["number", "4"],
+            ["punctuation", ";"],
+            ["comment", "// comment \"notstring\""],
+            ["function", "table"],
+            ["punctuation", "("],
+            ["punctuation", ")"],
+            ["punctuation", "}"]
+        ]
+    ]
+]
