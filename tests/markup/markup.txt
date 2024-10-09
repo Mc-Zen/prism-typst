@@ -22,7 +22,7 @@ this is not rust code
     ".",
     ["symbol", "#emoji.face"],
     ["raw", "`raw`"],
-    ["raw", "```rust\r\nthis is not rust code\r\n```"],
+    ["raw", "```rust\nthis is not rust code\n```"],
     ["string", "#\"string//not comment\""],
     ["comment", "// comment \"notstring\""],
     ["comment", "/*comment*/"]
