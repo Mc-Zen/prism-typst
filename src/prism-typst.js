@@ -12,11 +12,11 @@ const comment = [
 
 const raw = [
   {
-    pattern: /`[\s\S]*?`/,
+    pattern: /^```[\s\S]*?^```$/m,
     greedy: true,
   },
   {
-    pattern: /^```[\s\S]*?^```$/m,
+    pattern: /`[\s\S]*?`/,
     greedy: true,
   }
 ];
