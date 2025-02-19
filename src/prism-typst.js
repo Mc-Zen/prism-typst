@@ -87,7 +87,7 @@ Prism.languages["typst-code"] = {
     /0b[01]+/,
     /0o[0-7]+/,
     /0x[\da-fA-F]+/,
-    /[\d]+\.?[\d]*(e\d+)?(?:in|mm|cm|pt|em|deg|rad|fr|%)?/,
+    /(?<![\w-])[\d]+\.?[\d]*(e\d+)?(?:in|mm|cm|pt|em|deg|rad|fr|%)?/,
   ],
   symbol: /#[\w\-.]+\./,
   operator: /==|=|\+|\-|\*|\/|\+=|\-=|\*=|\/=|=>|<=|\.\.|<|>/,
