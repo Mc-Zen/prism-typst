@@ -1,0 +1,18 @@
+#let f() = {
+    10
+}
+----------
+[
+    [
+        "code-mode", [
+            ["keyword", "#let"],
+            ["function", "f"],
+            ["punctuation", "("],
+            ["punctuation", ")"],
+            ["operator", "="],
+            ["punctuation", "{"],
+            ["number", "10"],
+            ["punctuation", "}"]
+        ]
+    ]
+]
