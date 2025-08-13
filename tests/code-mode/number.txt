@@ -1,0 +1,12 @@
+#let a = -2
+----------
+[
+    [
+        "code-mode", [
+            ["keyword", "#let"],
+            "a",
+            ["operator", "="],
+            ["number", "-2"]
+        ]
+    ]
+]

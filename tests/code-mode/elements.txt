@@ -5,6 +5,7 @@
     let auto context true
     3 == 4; // comment "notstring"
     table()
+    let lengths = (1fr, -2)
 }
 ----------
 [
@@ -29,6 +30,14 @@
             ["comment", "// comment \"notstring\""],
             ["function", "table"],
             ["punctuation", "("],
+            ["punctuation", ")"],
+            ["keyword", "let"],
+            "lengths",
+            ["operator", "="],
+            ["punctuation", "("],
+            ["number", "1fr"],
+            ["punctuation", ","],
+            ["number", "-2"],
             ["punctuation", ")"],
             ["punctuation", "}"]
         ]
